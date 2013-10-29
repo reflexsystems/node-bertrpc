@@ -2,7 +2,7 @@
   "name": "node-bertrpc",
   "version": "0.0.1",
   "description": "BERT-RPC client and server for node.js",
-  "main": "index.js",
+  "main": "src/bert.js",
   "directories": {
     "example": "examples",
     "test": "test"
