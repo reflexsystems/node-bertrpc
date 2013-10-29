@@ -183,9 +183,8 @@ var BERT = {
 
    encode_float: function (obj) {
       var s = obj.toExponential();
-      /* BERT erlang expects 1 fractional, always */
-      if (s.length === 4)
-         s = obj.toExponential(1);
+      /* BERT erlang expects at least 1 fractional, so let's use 10 for now  */
+      s = obj.toExponential(10);
       while (s.length < 31)
         s += this.ZERO;
       return this.FLOAT + s;
