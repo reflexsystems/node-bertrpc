@@ -1,0 +1,29 @@
+{
+  "name": "node-bertrpc",
+  "version": "0.0.1",
+  "description": "BERT-RPC client and server for node.js",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node_modules/nodeunit/bin/nodeunit test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/reflexsystems/node-bertrpc.git"
+  },
+  "keywords": [
+    "bert",
+    "bertrpc"
+  ],
+  "author": "Ryan Tomayko, Jason Lunz",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/reflexsystems/node-bertrpc/issues"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.8.1"
+  }
+}
