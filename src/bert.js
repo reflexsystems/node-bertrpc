@@ -273,7 +273,7 @@ var BERT = {
       if (type == this.SMALL_TUPLE) return this.decode_tuple(data, 1);
       if (type == this.LARGE_TUPLE) return this.decode_large_tuple(data, 4);
       if (type == this.NIL) return this.decode_nil(data);
-      throw new Error("Unexpected BERT type: " + String.charCodeAt(type));
+      throw new Error("Unexpected BERT type: " + String.fromCharCode(type));
    },
 
    decode_atom: function (data, count) {
