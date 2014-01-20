@@ -1,0 +1,12 @@
+{
+    "name": "node-bertrpc",
+    "contents": [
+        {
+            "name": "%(name)s.tar",
+            "type": "jslib"
+        }
+    ],
+    "deps": [
+
+    ]
+}
