@@ -41,4 +41,4 @@ $(RXPACKAGE): rxpackage_template.json package.json $(MAKE_RXPACKAGE_JSON)
 
 clean:
 	rm -rf out
-	rm rxpackage.json
+	rm -f rxpackage.json
