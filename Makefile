@@ -9,8 +9,8 @@ BUILDTOOLS_NO_ERLANG=t
 BUILDTOOLS_NO_FLEX=t
 BUILDTOOLS_ROOT ?= $(abspath ../buildtools)
 NAME := node-bertrpc
-RPK := out/$(NAME).rpk
-RXPACKAGE = rxpackage.json
+APK := out/$(NAME).apk
+APACKAGE = apackage.json
 
 TAR=out/$(NAME).tar
 
@@ -18,17 +18,17 @@ TMP_DIR=out/$(NAME)
 
 IGNORE_FILES = logs out out.o package.json
 
-all default : $(RPK)
+all default : $(APK)
 
 include $(BUILDTOOLS_ROOT)/make/buildtools.mk
 
 SRC := $(call get_blush_files, $(IGNORE_FILES))
 DST := $(call make_cp_targets, $(SRC), $(TMP_DIR))
 
-$(RPK): Makefile $(TAR)
-	rxbuild package -r $(RXPACKAGE) $@ $(TAR)
+$(APK): Makefile $(TAR)
+	abuild package -r $(APACKAGE) $@ $(TAR)
 
-$(TAR): $(DST) $(RXPACKAGE)
+$(TAR): $(DST) $(APACKAGE)
 	tar -cf $(TAR) -C out $(NAME)
 
 $(DST): $(TMP_DIR)
@@ -36,9 +36,9 @@ $(DST): $(TMP_DIR)
 $(TMP_DIR):
 	mkdir -p $@
 
-$(RXPACKAGE): rxpackage_template.json package.json $(MAKE_RXPACKAGE_JSON)
-	$(MAKE_RXPACKAGE_JSON) $(RXPACKAGE) $(TMP_DIR)/package.json
+$(APACKAGE): apackage_template.json package.json $(MAKE_APACKAGE_JSON)
+	$(MAKE_APACKAGE_JSON) $(APACKAGE) $(TMP_DIR)/package.json
 
 clean:
 	rm -rf out
-	rm -f rxpackage.json
+	rm -f apackage.json
