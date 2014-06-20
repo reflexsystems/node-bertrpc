@@ -1,4 +1,4 @@
-// bert.js
+﻿// bert.js
 //
 // Copyright (c) 2009 Ryan Tomayko <tomayko.com/about>
 // See COPYING for licensing information.
@@ -346,8 +346,13 @@ var BERT = {
    decode_bytelist: function (data) {
       var size = this.bytes_to_int(data, 2);
       data = data.substring(2);
+      var array = new Array();
+      for (var i=0; i < size; i++) {
+         var element = data.charCodeAt(i);
+	      array.push(element);
+	  }
       return {
-         value: this.bytelist(data.substring(0, size)),
+         value: array,
          rest:  data.substring(size)
       };
    },
